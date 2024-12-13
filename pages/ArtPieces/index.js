@@ -3,12 +3,16 @@ import styled from "styled-components";
 
 const StyledList = styled.ul`
   list-style: none;
-  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
 `;
 
 const StyledListItem = styled.li`
-  margin-bottom: 1rem;
+  margin: 1rem;
 `;
+
 export default function ArtPieces({ artPieces }) {
   return (
     <StyledList>
