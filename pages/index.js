@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import Head from "next/head.js";
 import Spotlight from "./Spotlight";
 
-export default function HomePage(artPieces, favoriteArt, onToggleFavorite) {
+export default function HomePage({artPieces, favoriteArt, onToggleFavorite}) {
   return (
     <div>
       <Head>
