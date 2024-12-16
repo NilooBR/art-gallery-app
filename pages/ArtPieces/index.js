@@ -28,12 +28,16 @@ export default function ArtPieces({
   onToggleFavorite,
   favoriteArt,
 }) {
+
+
   return (
     <StyledList>
       {artPieces.map((artPiece) => {
-        const isFavorite = favoriteArt.some(
-          (art) => art.slug === artPiece.slug
-        );
+        const isFavorite =
+          (Array.isArray(favoriteArt) &&
+            favoriteArt.find((art) => art.slug === artPiece.slug)
+              ?.isFavorite) ||
+          false;
         return (
           <StyledListItem key={artPiece.slug}>
             <FavoriteButton
