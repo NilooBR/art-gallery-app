@@ -1,5 +1,21 @@
 import Navigation from "@/components/Navigation";
 import ArtPieces from "../ArtPieces";
+import styled from "styled-components";
+
+const StyledHeader = styled.h1`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`
+
+const StyledPageTitle = styled.h2`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`
+
 
 export default function Favorites({
   artPieces,
@@ -11,8 +27,8 @@ export default function Favorites({
   );
   return (
     <>
-      <h1>Art Gallery</h1>
-      <h2>Favorites</h2>
+      <StyledHeader>Art Gallery</StyledHeader>
+      <StyledPageTitle>Favorites</StyledPageTitle>
       <ArtPieces
         artPieces={favorites}
         favoriteArt={favoriteArt}

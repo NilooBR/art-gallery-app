@@ -4,6 +4,13 @@ import Navigation from "@/components/Navigation";
 import Link from "next/link";
 import styled from "styled-components";
 
+const StyledHeader = styled.h1`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`
+
 const StyledList = styled.ul`
   list-style: none;
   display: flex;
@@ -34,7 +41,8 @@ export default function ArtPieces({
   return (
     <>
     <StyledList>
-      {artPieces.map((artPiece) => {
+    <StyledHeader>Art Gallery</StyledHeader>
+    {artPieces.map((artPiece) => {
         const isFavorite =
           (Array.isArray(favoriteArt) &&
             favoriteArt.find((art) => art.slug === artPiece.slug)
