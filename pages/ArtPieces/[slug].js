@@ -4,6 +4,7 @@ import ArtPiece from "@/components/ArtPiece";
 import styled from "styled-components";
 import Color from "@/components/Color";
 import FavoriteButton from "@/components/FavoriteButton";
+import Navigation from "@/components/Navigation";
 
 const BackButton = styled.button`
   background-color: transparent;
@@ -65,6 +66,7 @@ export default function ArtPieceDetails({
         genre={displayedArtPiece.genre}
       ></ArtPiece>
       <Color artPieces={displayedArtPiece}></Color>
+      <Navigation></Navigation>
     </>
   );
 }

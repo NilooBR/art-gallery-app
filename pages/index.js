@@ -1,3 +1,4 @@
+import Navigation from "@/components/Navigation";
 import ArtPieces from "../pages/ArtPieces";
 import Head from "next/head.js";
 
@@ -13,6 +14,7 @@ export default function HomePage({ artPieces, favoriteArt, onToggleFavorite }) {
         favoriteArt={favoriteArt}
         onToggleFavorite={onToggleFavorite}
       ></ArtPieces>
+      <Navigation></Navigation>
     </div>
   );
 }
