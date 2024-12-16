@@ -23,18 +23,24 @@ const StyledLink = styled(Link)`
   }
 `;
 
-export default function ArtPieces({ artPieces, onToggleFavorite, favoriteArt }) {
+export default function ArtPieces({
+  artPieces,
+  onToggleFavorite,
+  favoriteArt,
+}) {
   return (
     <StyledList>
       {artPieces.map((artPiece) => {
-        const isFavorite = favoriteArt.some((art) => art.slug === artPiece.slug);
+        const isFavorite = favoriteArt.some(
+          (art) => art.slug === artPiece.slug
+        );
         return (
           <StyledListItem key={artPiece.slug}>
+            <FavoriteButton
+              isFavorite={isFavorite}
+              onToggleFavorite={() => onToggleFavorite(artPiece.slug)}
+            />
             <StyledLink href={`ArtPieces/${artPiece.slug}`}>
-              <FavoriteButton
-                isFavorite={isFavorite}
-                onToggleFavorite={() => onToggleFavorite(artPiece.slug)}
-              />
               <br />
               <ArtPiece
                 name={artPiece.name}
