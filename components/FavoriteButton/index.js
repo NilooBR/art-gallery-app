@@ -4,10 +4,13 @@ const StyledFavoriteButton = styled.button`
   background-color: white;
   border: none;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+  justify-content: center; 
+  align-items: center;    
+  width: 50px;         
+  height: 50px;           
+  border-radius: 50%;     
   cursor: pointer;
+
 `;
 
 export default function FavoriteButton({ isFavorite, onToggleFavorite }) {
