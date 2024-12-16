@@ -1,8 +1,13 @@
 import styled from "styled-components";
 
 const StyledFavoriteButton = styled.button`
-  background-color: ${(props) => (props.$isFavorite ? "red" : "blue")};
+  background-color: white;
   border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
 `;
 
 export default function FavoriteButton({ isFavorite, onToggleFavorite }) {
@@ -10,15 +15,17 @@ export default function FavoriteButton({ isFavorite, onToggleFavorite }) {
     <>
       <StyledFavoriteButton
         $isFavorite={isFavorite}
-        onClick={()=>onToggleFavorite()}
+        onClick={() => onToggleFavorite()}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
           viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
+          fill={isFavorite ? "black" : "none"}
+          stroke={
+            isFavorite ? "black" : "currentColor"
+          }
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"

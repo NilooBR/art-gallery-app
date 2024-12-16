@@ -9,6 +9,7 @@ const ColorList = styled.li`
 const List = styled.ul`
   display: flex;
   flex-direction: row;
+  justify-content: center;
   list-style: none;
   gap: 1rem;
 `;
