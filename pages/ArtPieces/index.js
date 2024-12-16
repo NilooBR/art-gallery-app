@@ -9,7 +9,7 @@ const StyledHeader = styled.h1`
   justify-content: center;
   align-items: center;
   width: 100%;
-`
+`;
 
 const StyledList = styled.ul`
   list-style: none;
@@ -36,39 +36,36 @@ export default function ArtPieces({
   onToggleFavorite,
   favoriteArt,
 }) {
-
-
   return (
     <>
-    <StyledList>
-    <StyledHeader>Art Gallery</StyledHeader>
-    {artPieces.map((artPiece) => {
-        const isFavorite =
-          (Array.isArray(favoriteArt) &&
-            favoriteArt.find((art) => art.slug === artPiece.slug)
-              ?.isFavorite) ||
-          false;
-        return (
-          <StyledListItem key={artPiece.slug}>
-            <FavoriteButton
-              isFavorite={isFavorite}
-              onToggleFavorite={() => onToggleFavorite(artPiece.slug)}
-            />
-            <StyledLink href={`ArtPieces/${artPiece.slug}`}>
-              <br />
-              <ArtPiece
-                name={artPiece.name}
-                imageSource={artPiece.imageSource}
-                artist={artPiece.artist}
-                year={artPiece.year}
-                genre={artPiece.genre}
+      <StyledList>
+        {artPieces.map((artPiece) => {
+          const isFavorite =
+            (Array.isArray(favoriteArt) &&
+              favoriteArt.find((art) => art.slug === artPiece.slug)
+                ?.isFavorite) ||
+            false;
+          return (
+            <StyledListItem key={artPiece.slug}>
+              <FavoriteButton
+                isFavorite={isFavorite}
+                onToggleFavorite={() => onToggleFavorite(artPiece.slug)}
               />
-            </StyledLink>
-          </StyledListItem>
-        );
-      })}
-    </StyledList>
-    <Navigation></Navigation>
+              <StyledLink href={`ArtPieces/${artPiece.slug}`}>
+                <br />
+                <ArtPiece
+                  name={artPiece.name}
+                  imageSource={artPiece.imageSource}
+                  artist={artPiece.artist}
+                  year={artPiece.year}
+                  genre={artPiece.genre}
+                />
+              </StyledLink>
+            </StyledListItem>
+          );
+        })}
+      </StyledList>
+      <Navigation></Navigation>
     </>
   );
 }

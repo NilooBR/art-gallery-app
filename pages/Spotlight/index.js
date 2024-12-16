@@ -26,15 +26,13 @@ export default function Spotlight({
     setSpotlight(artPieces[Math.floor(Math.random() * artPieces.length)]);
   }, [artPieces]);
 
-  const isFavorite =
-    (Array.isArray(favoriteArt) &&
-      favoriteArt.find((art) => art.slug === artPieces.slug)
-        ?.isFavorite) ||
-    false;
+  if (!spotlight) {
+    return <div>Loading Spotlight...</div>;
+  }
 
-    if(!spotlight){
-      return <div>Loading Spotlight</div>
-    }
+  const isFavorite =
+    Array.isArray(favoriteArt) &&
+    favoriteArt.find((art) => art.slug === spotlight.slug)?.isFavorite || false;
 
   return (
     <>
@@ -44,7 +42,7 @@ export default function Spotlight({
 
       <FavoriteButton
         isFavorite={isFavorite}
-        onToggleFavorite={() => onToggleFavorite(setSpotlight.slug)}
+        onToggleFavorite={() => onToggleFavorite(spotlight.slug)}
       ></FavoriteButton>
 
       <br></br>
