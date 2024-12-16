@@ -1,5 +1,6 @@
 import ArtPiece from "@/components/ArtPiece";
 import FavoriteButton from "@/components/FavoriteButton";
+import Navigation from "@/components/Navigation";
 import Link from "next/link";
 import styled from "styled-components";
 
@@ -31,6 +32,7 @@ export default function ArtPieces({
 
 
   return (
+    <>
     <StyledList>
       {artPieces.map((artPiece) => {
         const isFavorite =
@@ -58,5 +60,7 @@ export default function ArtPieces({
         );
       })}
     </StyledList>
+    <Navigation></Navigation>
+    </>
   );
 }
